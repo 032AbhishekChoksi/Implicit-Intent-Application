@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         bttnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(view.getContext(),SearchActivity.class);
+                startActivity(intent);
             }
         });
     }

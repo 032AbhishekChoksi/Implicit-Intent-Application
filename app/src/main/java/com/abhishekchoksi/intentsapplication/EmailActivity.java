@@ -3,6 +3,7 @@ package com.abhishekchoksi.intentsapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,8 +30,7 @@ public class EmailActivity extends AppCompatActivity {
                 String subject = editTextEmailSubject.getText().toString();
                 String body = editTextEmailBody.getText().toString();
 
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("*/*");
+                Intent intent = new Intent(Intent.ACTION_SEND, Uri.parse("mailto:"));
                 intent.putExtra(Intent.EXTRA_EMAIL, addresses);
                 intent.putExtra(Intent.EXTRA_SUBJECT, subject);
                 intent.putExtra(Intent.EXTRA_TEXT, body);
